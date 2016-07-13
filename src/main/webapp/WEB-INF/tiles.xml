@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="base.definition" template="/WEB-INF/pages/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/pages/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/pages/footer.jsp" />
+	</definition>
+	<definition name="home" extends="base.definition">
+		<put-attribute name="title" value="Welcome to RMDSS" />
+		<put-attribute name="body" value="/WEB-INF/pages/home.jsp" />
+	</definition>
+	<definition name="geoSourceReport" extends="base.definition">
+		<put-attribute name="title" value="Welcome to RMDSS" />
+		<put-attribute name="body" value="/WEB-INF/pages/geoSourceReport.jsp" />
+	</definition>
+	<definition name="segmentReport" extends="base.definition">
+		<put-attribute name="title" value="Welcome to RMDSS" />
+		<put-attribute name="body" value="/WEB-INF/pages/segmentReport.jsp" />
+	</definition>
+	<definition name="userSuccess" extends="base.definition">
+		<put-attribute name="title" value="Welcome to RMDSS" />
+		<put-attribute name="body" value="/WEB-INF/pages/userSuccess.jsp" />
+	</definition>
+	<definition name="rgiReport" extends="base.definition">
+		<put-attribute name="title" value="Welcome to RMDSS" />
+		<put-attribute name="body" value="/WEB-INF/pages/rgiReport.jsp" />
+	</definition>
+	<definition name="fileUploadSuccess" extends="base.definition">
+		<put-attribute name="title" value="Welcome to RMDSS" />
+		<put-attribute name="body" value="/WEB-INF/pages/fileUploadSuccess.jsp" />
+	</definition>
+	<definition name="fileUploadForm" extends="base.definition">
+		<put-attribute name="title" value="Welcome to RMDSS" />
+		<put-attribute name="body" value="/WEB-INF/pages/fileUploadForm.jsp" />
+	</definition>
+	
+
+</tiles-definitions>

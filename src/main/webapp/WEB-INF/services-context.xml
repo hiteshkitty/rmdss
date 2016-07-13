@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+
+	<bean id="userService" class="com.hcl.rmdss.services.UserSvcImpl">
+	</bean>
+
+	<bean id="reportService" class="com.hcl.rmdss.services.ReportSvcImpl">
+
+	</bean>
+
+	<bean id="FileUploadSvc" class="com.hcl.rmdss.services.FileUploadSvcImpl">
+
+	</bean>
+	
+	<bean id="userDAO" class="com.hcl.rmdss.dao.UserDAOImpl"/>
+	
+	<bean id="fileUploadDAO" class="com.hcl.rmdss.dao.FileUploadDAOImpl"/>
+	
+	
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+
+
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+					<property name="marshaller" ref="jaxbMarshaller" />
+					<property name="unmarshaller" ref="jaxbMarshaller" />
+				</bean>
+				<bean class="org.springframework.http.converter.FormHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter" />
+
+			</list>
+		</property>
+	</bean>
+	<!-- If using Jaxb2Marshaller as MarshallingHttpMessageConverter -->
+
+	<bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="classesToBeBound">
+			<list>
+				<value>com.hcl.rmdssws.model.User</value>
+				<value>com.hcl.rmdssws.model.Users</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>
